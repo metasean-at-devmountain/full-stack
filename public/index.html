@@ -1,0 +1,39 @@
+<! DOCTYPE html>
+<html ng-app="metaseanPersonal">
+<head>
+	<title>Personal Stuff about MetaSean</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body ng-controller="mainCtrl">
+
+	<h1>{{title}}</h1>
+
+<!-- BUTTON CONTROLS -->
+	<button ng-click="toggleFamily()">Family</button>
+	<button ng-click="toggleFriends()">Friends</button>
+	<button ng-click="toggleHobbies()">Hobbies</button>
+	<button ng-click="toggleStats()">Stats</button>
+
+<!-- FAMILY -->
+	<div ng-show="showFamily">
+		<h2>Family</h2>
+ 		<table>
+			<thead>
+				<th>Name<th>
+				<th>Relationship</th>
+			</thead>
+			<tbody ng-repeat="member in family">
+				<td>{{member.name}}</td>
+				<td>{{member.relationship}}</td>
+			</tbody>
+		</table>
+	</div>
+
+<!-- SCRIPTS -->
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/mainDirectives.js"></script>
+	<script type="text/javascript" src="js/mainCtrl.js"></script>
+	<script type="text/javascript" src="js/mainService.js"></script>
+</body>
+</html>
